@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="credz-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      body {
+        background-color: #FED;
+      }
+    </style>
+    <h2>Hello [[prop1]] i am the world ok man?</h2>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'credz-app',
+      properties: {
+        prop1: {
+          type: String,
+          value: 'credz-app',
+        },
+      }
+    });
+  </script>
+</dom-module>
