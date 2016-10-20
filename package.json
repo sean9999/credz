@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/sean9999/credz.git"
   },
+  "bin" : {
+    "credz" : "./cli.js"
+  },
   "keywords": [
     "password",
     "credentials",
