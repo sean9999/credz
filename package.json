@@ -1,0 +1,28 @@
+{
+  "name": "@sean9999/credz",
+  "version": "0.0.1",
+  "description": "a credential manager with sharing",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sean9999/credz.git"
+  },
+  "keywords": [
+    "password",
+    "credentials",
+    "secure",
+    "sharing"
+  ],
+  "author": "Sean Macdonald <sean@crazyhorsecoding.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sean9999/credz/issues"
+  },
+  "homepage": "https://github.com/sean9999/credz#readme"
+}

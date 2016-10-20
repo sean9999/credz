@@ -1,4 +1,5 @@
-# \<credz\>
+# credz
+a credential manager with sharing
 
 password manager
 
