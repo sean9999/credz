@@ -1,0 +1,19 @@
+body {
+	background-color: #9ED;
+}
+
+header, main, footer {
+	border: 1px dotted gray;
+}
+
+header {
+	background-color: #EEE;
+}
+
+main {
+	background-color: #EEF;
+}
+
+footer {
+	background-color: #FEF;
+}

@@ -1,0 +1,48 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="credz-topnav">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      nav {
+        width: 33%;
+        text-align: center;
+        margin: 0 auto;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0.5em 0;
+      }
+      li {
+        
+      }
+    </style>
+    <nav>
+      <ul>
+        <li><a href="/index.html">index</a></li>
+        <li><a href="/new.html">new</a></li>
+        <li><a href="/search.html">search</a></li>
+        <li><a href="/groups.html">groups</a></li>
+        <li><a href="/users.html">users</a></li>
+      </ul>
+    </nav>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'credz-topnav',
+      properties: {
+        prop1: {
+          type: String,
+          value: 'credz-topnav',
+        },
+      }
+    });
+  </script>
+</dom-module>

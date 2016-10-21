@@ -2,7 +2,7 @@
   "name": "@sean9999/credz",
   "version": "0.0.1",
   "description": "a credential manager with sharing",
-  "main": "main.js",
+  "main": "entrypoint.js",
   "directories": {
     "test": "test"
   },

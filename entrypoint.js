@@ -1,4 +1,9 @@
-const {app, BrowserWindow} = require('electron')
+/**
+ *  Controller for electron
+ *
+ */
+
+const {app, BrowserWindow} = require('electron');
 
 let win, worker;
 
@@ -8,7 +13,8 @@ function createWindow () {
   win.on('closed', () => {
     win = null;
     worker = null;
-  })
+  });
+
 }
 
 app.on('window-all-closed', () => {
@@ -19,6 +25,7 @@ app.on('activate', () => {
   if (win === null) {
     createWindow()
   }
+  win.webContents.openDevTools();
 })
 
 app.on('ready', createWindow);
