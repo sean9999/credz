@@ -1,0 +1,27 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="credz-dashboard">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      body {
+        background-color: #FED;
+      }
+    </style>
+    <h2>Hello. I am [[prop1]] and name is [[name]] and route is [[route]] and view is [[routeData.view]] and tail is [[tail]] and subroute is [[subroute]]</h2>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'credz-dashboard',
+      properties: {
+        prop1: {
+          type: String,
+          value: 'dashboard',
+        },
+      }
+    });
+  </script>
+</dom-module>

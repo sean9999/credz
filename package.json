@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/sean9999/credz.git"
   },
-  "bin" : {
-    "credz" : "./cli.js"
+  "bin": {
+    "credz": "./cli.js"
   },
   "keywords": [
     "password",
@@ -27,5 +27,14 @@
   "bugs": {
     "url": "https://github.com/sean9999/credz/issues"
   },
-  "homepage": "https://github.com/sean9999/credz#readme"
+  "homepage": "https://github.com/sean9999/credz#readme",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-replace": "^0.5.4",
+    "gulp-series": "^1.0.2",
+    "polymer-build": "^0.4.1"
+  }
 }

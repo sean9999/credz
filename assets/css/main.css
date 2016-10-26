@@ -20,6 +20,10 @@ a:hover, a.hovering {
 	text-decoration: none;
 }
 
+.selected {
+    font-weight: bold;
+}
+
 header {
 	flex: 1 7 0;
 }
@@ -42,4 +46,8 @@ footer {
 
 .centered {
 	text-align: center;
+}
+
+h1 {
+    color: purple;
 }

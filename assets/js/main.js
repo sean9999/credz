@@ -1,6 +1,9 @@
 "use strict";
 
 const handleAnchors = () => {
+    /**
+     * onhover styles get copied to all links pointing to same resource
+     **/
 	const anchors = document.querySelectorAll('a[href]');
 	Array.from(anchors).forEach(anchor => {
 		anchor.addEventListener('mouseover', ev => {
@@ -17,16 +20,7 @@ const handleAnchors = () => {
 				a.classList.remove('hovering');
 			});
 		});
-		anchor.addEventListener('click', ev => {
-			ev.preventDefault();
-			loadFragment(ev.target.href);
-		});
 	});
-};
-
-const loadFragment = (href) => {
-	let frag = href.split('/').pop().split('.').shift();
-	alert(frag);
 };
 
 const init = () => {
@@ -34,4 +28,4 @@ const init = () => {
 	handleAnchors();
 };
 
-document.addEventListener('DOMContentLoaded',init);
+window.addEventListener('WebComponentsReady',init);

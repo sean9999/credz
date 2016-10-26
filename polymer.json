@@ -1,0 +1,21 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/credz-app/app.html",
+  "fragments": [
+    "src/credz-app/dashboard.html",
+    "src/credz-app/legal.html",
+    "src/credz-app/new.html",
+    "src/credz-app/topnav.html"
+  ],
+  "sourceGlobs": [
+   "src/**",
+   "assets/**",
+   "bower.json",
+   "entrypoint.js",
+   "manifest.json",
+   "package.json"
+  ],
+  "includeDependencies": [
+    "bower_components/webcomponentsjs/webcomponents-lite.min.js"
+  ]
+}
