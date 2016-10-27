@@ -2,4 +2,4 @@
 
 APP_ROOT="$(npm prefix)" && source $APP_ROOT/vars.sh
 
-polymer build
+gulp build
