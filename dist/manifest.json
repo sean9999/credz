@@ -1,0 +1,14 @@
+{
+  "name": "@sean9999/credz",
+  "short_name": "credz",
+  "description": "password manager with sharing",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/assets/icons/pacman-1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

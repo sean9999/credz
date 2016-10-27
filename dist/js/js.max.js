@@ -1,3 +1,11 @@
+{
+    let bar = 7;
+}
+
+{
+    let foo = 5;
+}
+
 /**
  * Copyright 2015 Google Inc. All rights reserved.
  *
@@ -55,3 +63,4 @@ if ('serviceWorker' in navigator) {
     console.error('Error during service worker registration:', e);
   });
 }
+//# sourceMappingURL=js.max.js.map

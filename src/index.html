@@ -5,14 +5,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="manifest" href="manifest.json">
+        <!-- build:css -->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/debug.css">
+        <link rel="stylesheet" href="css/jazz.css">
+        <!-- endbuild -->
+        <!-- build:ts -->
         <script src="js/main.ts" defer></script>
+        <!-- endbuild -->
+        <!-- build:js -->
+        <script src="js/foo.js" defer></script>
+        <script src="js/bar.js" defer></script>
+        <!-- endbuild -->
     </head>
     <body>
         <header>
             <nav class="top">
-            <a href="poo">poo</a>
+                <a href="poo">poo</a>
+                <a href="moo">moo</a>
+                <a href="goo">goo</a>
             </nav>
         </header>
         <main>
@@ -22,7 +33,11 @@
             </section>
         </main>
         <footer>
-            <nav class="top" />
+            <nav class="top">
+                <a href="poo">poo</a>
+                <a href="moo">moo</a>
+                <a href="goo">goo</a>
+            </nav>
         </footer>
     </body>
 </html>

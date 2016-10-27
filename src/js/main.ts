@@ -1,7 +1,6 @@
+import { handleAnchors } from './decorate-links';
 
-import { handleAnchors } from 'docorate-links.ts';
-
-import dog from '../components/dogs/dogs.js';
+import { dog } from '../components/dogs/dogs';
 
 const init = () => {
 	handleAnchors();
