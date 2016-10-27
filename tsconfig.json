@@ -1,9 +1,9 @@
 {
-    "files": [
-        "src/main.ts"
+    "include": [
+        "src/**/*.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,
-        "target": "es6"
+        "target": "es2015"
     }
 }

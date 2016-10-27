@@ -1,7 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env node
 
-APP_ROOT="$(npm prefix)" && source $APP_ROOT/vars.sh
-
-$(sleep 2 && open http://localhost:8080) &&
-
-polymer serve
+var liveServer = require("live-server");
+ 
+var params = {
+    root: "./dist"
+};
+liveServer.start(params);

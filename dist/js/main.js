@@ -28,4 +28,12 @@ const init = () => {
 	handleAnchors();
 };
 
-window.addEventListener('WebComponentsReady',init);
+switch (document.readyState) {
+    case 'interactive':
+    case 'complete':
+    init();
+    break;
+    case 'loading':
+    window.addEventListener('DOMContentReady',init);
+    break;
+}

@@ -1,61 +1,58 @@
-'use strict';
-
-const path = require('path');
-const gulp = require('gulp');
-const gulpif = require('gulp-if');
-
-//  debugging
-const logging = require('plylog');
-logging.setVerbose();
-
-global.config = {
-  polymerJsonPath: path.join(process.cwd(), 'polymer.json'),
-  build: {
-    rootDirectory: 'build',
-    bundledDirectory: 'bundled',
-    unbundledDirectory: 'unbundled',
-    bundleType: 'both'
-  },
-  serviceWorkerPath: 'service-worker.js',
-  swPrecacheConfig: {
-    navigateFallback: '/index.html'
-  }
+var gulp = require("gulp");
+var browserify = require("browserify");
+var watchify = require("watchify");
+var source = require('vinyl-source-stream');
+var tsify = require("tsify");
+var ts = require("gulp-typescript");
+var tsProject = ts.createProject("tsconfig.json");
+var gutil = require("gulp-util");
+var watch = require('gulp-watch');
+var paths = {
+    pages: ['src/**/*.html'],
+    js: ['src/**/*.js']
 };
 
-// Add your own custom gulp tasks to the gulp-tasks directory
-// A few sample tasks are provided for you
-// A task should return either a WriteableStream or a Promise
-const clean = require('./gulp-tasks/clean.js');
-const debarf = require('./gulp-tasks/debarf.js');
-const project = require('./gulp-tasks/project.js');
+gulp.task("copy-html", function () {
+    return gulp.src(paths.pages)
+        .pipe(gulp.dest("dist"));
+});
 
-// The source task will split all of your source files into one
-// big ReadableStream. Source files are those in src/** as well as anything
-// added to the sourceGlobs property of polymer.json.
-// Because most HTML Imports contain inline CSS and JS, those inline resources
-// will be split out into temporary files. You can use gulpif to filter files
-// out of the stream and run them through specific tasks. An example is provided
-// which filters all images and runs them through imagemin
-function source() {
-  return project.splitSource()
-    // Add your own build tasks here!
-    .pipe(project.rejoin()); // Call rejoin when you're finished
+gulp.task('copy-js', function() {
+    return gulp.src(paths.js).pipe(gulp.dest('dist'));
+});
+
+gulp.task("transpile-typescript", function () {
+    return b
+    .plugin(tsify)
+    .bundle()
+    .pipe(source('js/bundle.js'))
+    .pipe(gulp.dest("dist"));
+});
+
+var b = browserify({
+    basedir: '.',
+    debug: true,
+    entries: ['src/main.ts'],
+    cache: {},
+    packageCache: {}
+});
+
+var watchedBrowserify = watchify(browserify(b).plugin(tsify));
+
+function bundle() {
+    return watchedBrowserify
+        .bundle()
+        .pipe(source('js/bundle.js'))
+        .pipe(gulp.dest("dist"));
 }
 
-// The dependencies task will split all of your bower_components files into one
-// big ReadableStream
-// You probably don't need to do anything to your dependencies but it's here in
-// case you need it :)
-function dependencies() {
-  return project.splitDependencies()
-    .pipe(project.rejoin());
-}
+gulp.task('stream', function () {
+    // Endless stream mode
+    return watch(['src/**','!src/**/*.ts'], { ignoreInitial: false }).pipe(gulp.dest('dist'));
+});
 
-// Clean the build directory, split all source and dependency files into streams
-// and process them, and output bundled and unbundled versions of the project
-// with their own service workers
-gulp.task('default', gulp.series([
-  clean.build,
-  project.merge(source, dependencies),
-  project.serviceWorker
-]));
+gulp.task('build', gulp.series('copy-html','copy-js','transpile-typescript'));
+
+gulp.task("default", gulp.series('build', bundle, 'stream'));
+watchedBrowserify.on("update", bundle);
+watchedBrowserify.on("log", gutil.log);
