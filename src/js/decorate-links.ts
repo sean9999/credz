@@ -1,4 +1,4 @@
-const handleAnchors = () => {
+export function handleAnchors(){
     /**
      * onhover styles get copied to all links pointing to same resource
      **/

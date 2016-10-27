@@ -1,9 +1,11 @@
-"use strict";
 
-import { * } from 'docrate-links.ts';
+import { handleAnchors } from 'docorate-links.ts';
+
+import dog from '../components/dogs/dogs.js';
 
 const init = () => {
 	handleAnchors();
+    dog();
 };
 
 switch (document.readyState) {

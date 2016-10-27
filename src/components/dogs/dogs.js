@@ -1,4 +1,3 @@
-{
-    let thing = 'dogs';
-    console.log({thing});
+export function dog(){
+    console.log('w00f!');
 }
