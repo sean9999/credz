@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-APP_ROOT="$(npm prefix)"
+APP_ROOT="$(npm prefix)" && source $APP_ROOT/vars.sh
 
 polymer build
-
-

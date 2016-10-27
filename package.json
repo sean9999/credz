@@ -35,6 +35,8 @@
     "gulp-imagemin": "^3.0.3",
     "gulp-replace": "^0.5.4",
     "gulp-series": "^1.0.2",
-    "polymer-build": "^0.4.1"
+    "gulp-typescript": "^3.0.2",
+    "polymer-build": "^0.4.1",
+    "typescript": "^2.0.6"
   }
 }

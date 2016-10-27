@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-$(sleep 3 && open http://localhost:8080) &&
+APP_ROOT="$(npm prefix)" && source $APP_ROOT/vars.sh
+
+$(sleep 2 && open http://localhost:8080) &&
 
 polymer serve

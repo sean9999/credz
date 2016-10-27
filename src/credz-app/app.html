@@ -1,41 +1,34 @@
+<!--    polymer components  -->
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/app-route/app-location.html" async="async">
+<link rel="import" href="../../bower_components/app-route/app-route.html" async="async">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html" async="async">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html" async="async">
 
-<link rel="import" href="../../bower_components/app-route/app-location.html">
-<link rel="import" href="../../bower_components/app-route/app-route.html">
-<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
-<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
-
-<!-- credz fragments and components -->
-<link rel="import" href="../../src/credz-appdashboard.html">
-<link rel="import" href="../../src/credz-applegal.html">
-<link rel="import" href="../../src/credz-appnew.html">
-<link rel="import" href="../../src/credz-app/topnav.html">
+<!-- custom components -->
+<link rel="import" href="../../src/credz-app/dashboard.html" async="async">
+<link rel="import" href="../../src/credz-app/legal.html" async="async">
+<link rel="import" href="../../src/credz-app/new.html" async="async">
+<link rel="import" href="../../src/credz-app/topnav.html" async="async">
 
 <dom-module id="credz-app">
   <template>
     <style>
-
     :host {
         background-color: #9ED;
     }
-
     header, main, footer {
         border: 1px dotted gray;
     }
-
     header {
         background-color: #EEE;
     }
-
     main {
         background-color: #EEF;
     }
-
     footer {
         background-color: #FEF;
     }
-
-
     :host {
         height: 99%;
         overflow: hidden;
@@ -44,45 +37,35 @@
         justify-content: space-around;
         flex-direction: column;
     }
-
     a {
         text-decoration: none;
     }
-
     a:hover, a.hovering {
         background-color: black;
         color: white;
         text-decoration: none;
     }
-
     .selected {
         font-weight: bold;
     }
-
     header {
         flex: 1 7 0;
     }
-
     main {
         flex: 7 1 auto;
     }
-
     footer {
         flex: 1 7 0;
     }
-
     .smalltext {
         font-size: small;
     }
-
     .justified {
         text-align: justify;
     }
-
     .centered {
         text-align: center;
     }
-
     h1 {
         color: purple;
     }
@@ -99,12 +82,8 @@
 
     <main>
         <iron-pages selected="{{routedata.view}}" attr-for-selected="name">
-            <div name="new">
-            <p>i'm new</p>
-            </div>
-            <div name="dashboard">
-            <p>i'mdasbhboard</p>
-            </div>
+            <credz-new name="new"></credz-new>
+            <credz-dashboard name="dashboard"></credz-dashboard>
         </iron-pages>        
     </main>
 
@@ -127,6 +106,3 @@
     });
   </script>
 </dom-module>
-
-
-
