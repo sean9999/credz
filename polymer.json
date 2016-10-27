@@ -2,10 +2,14 @@
   "entrypoint": "index.html",
   "shell": "src/credz-app/app.html",
   "fragments": [
-    "src/credz-app/dashboard.html",
-    "src/credz-app/legal.html",
-    "src/credz-app/new.html",
-    "src/credz-app/topnav.html"
+    "src/credz-app/views/dashboard.html",
+    "src/credz-app/views/debug.html",
+    "src/credz-app/views/groups.html",
+    "src/credz-app/views/newcred.html",
+    "src/credz-app/views/search.html",
+    "src/credz-app/views/users.html",
+    "src/credz-app/widgets/legal.html",
+    "src/credz-app/widgets/topnav.html"
   ],
   "sourceGlobs": [
    "src/**",

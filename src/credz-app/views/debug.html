@@ -1,13 +1,13 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<dom-module id="credz-newcred">
+<dom-module id="credz-debug">
   <template>
     <style>
       :host {
         display: block;
       }
       body {
-        background-color: #ABC;
+        background-color: #DDD;
       }
     </style>
     <h2>Hello. I am [[prop1]]</h2>
@@ -15,11 +15,11 @@
 
   <script>
     Polymer({
-      is: 'credz-newcred',
+      is: 'credz-debug',
       properties: {
         prop1: {
           type: String,
-          value: 'NEW CRED',
+          value: 'DEBUG!',
         },
       }
     });

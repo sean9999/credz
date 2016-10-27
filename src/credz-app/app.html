@@ -1,15 +1,15 @@
 <!--    polymer components  -->
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="../../bower_components/app-route/app-location.html" async="async">
-<link rel="import" href="../../bower_components/app-route/app-route.html" async="async">
-<link rel="import" href="../../bower_components/iron-pages/iron-pages.html" async="async">
-<link rel="import" href="../../bower_components/iron-selector/iron-selector.html" async="async">
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/app-route/app-location.html" async="async">
+<link rel="import" href="/bower_components/app-route/app-route.html" async="async">
+<link rel="import" href="/bower_components/iron-pages/iron-pages.html" async="async">
+<link rel="import" href="/bower_components/iron-selector/iron-selector.html" async="async">
 
 <!-- custom components -->
-<link rel="import" href="../../src/credz-app/dashboard.html" async="async">
-<link rel="import" href="../../src/credz-app/legal.html" async="async">
-<link rel="import" href="../../src/credz-app/new.html" async="async">
-<link rel="import" href="../../src/credz-app/topnav.html" async="async">
+<link rel="import" href="/src/credz-app/views/dashboard.html" async="async">
+<link rel="import" href="/src/credz-app/widgets/legal.html" async="async">
+<link rel="import" href="/src/credz-app/views/newcred.html" async="async">
+<link rel="import" href="/src/credz-app/widgets/topnav.html" async="async">
 
 <dom-module id="credz-app">
   <template>
@@ -82,8 +82,12 @@
 
     <main>
         <iron-pages selected="{{routedata.view}}" attr-for-selected="name">
-            <credz-new name="new"></credz-new>
             <credz-dashboard name="dashboard"></credz-dashboard>
+            <credz-newcred name="newcred"></credz-newcred>
+            <credz-groups name="groups"></credz-groups>
+            <credz-search name="search"></credz-search>
+            <credz-users name="users"></credz-users>
+            <credz-debug name="debug"></credz-debug>
         </iron-pages>        
     </main>
 

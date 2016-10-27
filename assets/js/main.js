@@ -24,7 +24,7 @@ const handleAnchors = () => {
 };
 
 const init = () => {
-	console.log('running init');
+	// console.log('running init');
 	handleAnchors();
 };
 

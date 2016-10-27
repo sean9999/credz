@@ -5,7 +5,7 @@
 
 const {app, BrowserWindow} = require('electron');
 
-let win, worker;
+let wins=[], win, worker;
 
 function createWindow () {
   win = new BrowserWindow({width: 800, height: 600});
@@ -15,6 +15,7 @@ function createWindow () {
     worker = null;
   });
 
+  wins.push(win);
 }
 
 app.on('window-all-closed', () => {

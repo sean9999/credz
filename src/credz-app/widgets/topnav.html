@@ -25,11 +25,9 @@
     </style>
     <nav>
       <ul>
-        <li><a href="/dashboard">index</a></li>
-        <li><a href="/newcred">new cred</a></li>
-        <li><a href="/search">search</a></li>
-        <li><a href="/groups">groups</a></li>
-        <li><a href="/users">users</a></li>
+        <template is="dom-repeat" items="links" as="link">
+            <li><a href="{{link.href}}">{{link.label}}</a></li>
+        </template>
       </ul>
     </nav>
   </template>
@@ -38,9 +36,16 @@
     Polymer({
       is: 'credz-topnav',
       properties: {
-        prop1: {
-          type: String,
-          value: 'credz-topnav',
+        links: {
+          type: Array,
+          value: [
+            { "href": "/dashboard", "label": "Dashboard" },
+            { "href": "/newcred",   "label": "New Cred" },
+            { "href": "/search",    "label": "Search" },
+            { "href": "/groups",    "label": "Groups" },
+            { "href": "/users",     "label": "Users" },
+            { "href": "/debug",     "label": "Debug" }
+          ],
         },
       }
     });
