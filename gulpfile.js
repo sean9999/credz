@@ -12,8 +12,10 @@ var concatCss = require('gulp-concat-css');
 var minifyCSS = require('gulp-minify-css');
 var gp_concat = require('gulp-concat'), gp_rename = require('gulp-rename'), gp_uglify = require('gulp-uglify'), gp_sourcemaps = require('gulp-sourcemaps');
 var htmlreplace = require('gulp-html-replace');
+var electron = require('electron-connect').server.create();
 var paths = {
     pages: ['src/*.html','!src/index.html'],
+    index: ['src/index.html'],
     rootJs: ['src/*.js'],
     nonRootJs: ['src/js/*.js'],
     meta: ['manifest.json','entrypoint.js','package.json'],
@@ -102,7 +104,7 @@ gulp.task('fix-index-html', function() {
         'js': 'js/js.max.js',
         'ts': {
             src: null,
-            tpl: '\t<script src="ts.js" async="async" defer="defer"></script>\n'
+            tpl: '    <script src="js/ts.js" async="async" defer="defer"></script>\n'
         }
     }))
     .pipe(gulp.dest('dist/'));
@@ -112,6 +114,7 @@ gulp.task('watch',function(){
     //  watchers
     var watchers = [];
     var watch_html = gulp.watch(paths.pages, gulp.series(['copy-html']));
+    var watch_index = gulp.watch(paths.index, gulp.series(['fix-index-html']));
     var watch_rootJs = gulp.watch(paths.rootJs, gulp.series(['copy-root-js']));
     var watch_nonRootJs = gulp.watch(paths.nonRootJs, gulp.series(['copy-nonroot-js']));
     var watch_meta = gulp.watch(paths.meta, gulp.series(['copy-meta']));
@@ -119,6 +122,7 @@ gulp.task('watch',function(){
     var watch_ts = gulp.watch(paths.ts, gulp.series(['transpile-typescript']));
     watchers.push(
         watch_html,
+        watch_index,
         watch_rootJs,
         watch_nonRootJs,
         watch_meta,
@@ -127,13 +131,20 @@ gulp.task('watch',function(){
     );
     watchers.forEach(function(w){
         w.on('change',function(event){
-            gutil.log('File ' + event.path + ' was ' + event.type + ' in function ' + w.name);
+            gutil.log('gulp watch activated');
         });
     });
 });
 
+gulp.task('launch-electron-with-livereload', function () {
+  electron.start();
+  gulp.watch('entrypoint.js', electron.restart);
+  gulp.watch(['dist/**/*.html','dist/**/*.css','dist/**/*.js'], electron.reload);
+});
 
 gulp.task('build', gulp.series('copy-html','copy-js','copy-meta','combine-css','transpile-typescript','fix-index-html'));
+
+gulp.task('serv', gulp.series('build','launch-electron-with-livereload'));
 
 gulp.task("default", gulp.series('build'));
 

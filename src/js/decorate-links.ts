@@ -7,7 +7,7 @@ export function handleAnchors(){
         anchor.addEventListener('mouseover', ev => {
             Array.from(anchors).forEach(a => {
                 let thisAnchor = <HTMLAnchorElement>ev.target;
-                if (a.getAttribute('href') === thisAnchor.href) {
+                if (a.getAttribute('href') === thisAnchor.getAttribute('href')) {
                     a.classList.add('hovering');
                 } else {
                     a.classList.remove('hovering');
