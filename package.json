@@ -56,5 +56,9 @@
     "typescript": "^2.0.6",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "bash-color": "0.0.4",
+    "dbus-native": "^0.2.0"
   }
 }

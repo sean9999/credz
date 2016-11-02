@@ -18,7 +18,7 @@ var paths = {
     index: ['src/index.html'],
     rootJs: ['src/*.js'],
     nonRootJs: ['src/js/*.js'],
-    meta: ['manifest.json','entrypoint.js','package.json'],
+    meta: ['manifest.json','entrypoint.js','package.json','favicon.ico'],
     css: ['src/**/*.css'],
     ts: ['src/**/*.ts']
 };
@@ -104,7 +104,7 @@ gulp.task('fix-index-html', function() {
         'js': 'js/js.max.js',
         'ts': {
             src: null,
-            tpl: '    <script src="js/ts.js" async="async" defer="defer"></script>\n'
+            tpl: '<script src="js/ts.js" async="async" defer="defer"></script>\n'
         }
     }))
     .pipe(gulp.dest('dist/'));
