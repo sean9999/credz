@@ -1,6 +1,6 @@
 {
-  "name": "@sean9999/credz",
-  "version": "0.0.1",
+  "name": "@code_monk/credz",
+  "version": "0.0.2",
   "description": "a credential manager with sharing",
   "main": "entrypoint.js",
   "directories": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sean9999/credz.git"
+    "url": "git@gitlab.com:code_monk/credz.git"
   },
   "bin": {
     "credz": "./cli.js"
@@ -25,9 +25,9 @@
   "author": "Sean Macdonald <sean@crazyhorsecoding.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sean9999/credz/issues"
+    "url": "https://gitlab.com/code_monk/credz/issues"
   },
-  "homepage": "https://github.com/sean9999/credz#readme",
+  "homepage": "https://gitlab.com/code_monk/credz",
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-latest": "^6.16.0",
